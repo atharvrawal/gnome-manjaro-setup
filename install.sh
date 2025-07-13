@@ -35,7 +35,9 @@ gsettings set org.gnome.shell.keybindings toggle-application-view         "['<Su
 
 
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile           "flat"
-gsettings set org.gnome.shell favorite-apps                               "[]"f
+gsettings set org.gnome.shell favorite-apps                               "[]"
+gsettings set org.gnome.mutter workspaces-only-on-primary                 false
+
 
 
 echo "Updating & Upgrading Arch..."
