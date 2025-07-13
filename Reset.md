@@ -29,4 +29,4 @@
 	- `sudo nvim /usr/lib/systemd/user/gnome-session-restart-dbus.service` 
 	- Add `Slice=.slice` to the bottom of the file under `[Service]`
 
-### 
+###

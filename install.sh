@@ -20,15 +20,6 @@ echo "Dark Mode Successful"
 echo ""
 
 echo "Setting Keybings..."
-echo "Switch Windows            : Alt    +   Tab"
-echo "Switch Application        : Super  +   Tab"
-echo "Switch to Workspace Left  : Alt    +   H"
-echo "Switch to Workspace Right : Alt    +   L"
-echo "Launch Nautilus           : Super  +   E"
-echo "Move to Workspace Left    : Alt    +   Shift  +  H"
-echo "Move to Workspace Right   : Alt    +   Shift  +  L"
-echo "Show Desktop              : Super  +   D"
-echo "Toggle Maximization State : Super  +   Up"
 echo ""
 gsettings set org.gnome.desktop.wm.keybindings switch-windows             "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications        "['<Super>Tab']"
@@ -40,9 +31,11 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right    "['<Al
 gsettings set org.gnome.desktop.wm.keybindings show-desktop               "['<Super>D']"
 gsettings set org.gnome.desktop.wm.keybindings toggle-maximized           "['<Super>Up']"
 gsettings set org.gnome.desktop.wm.keybindings close                      "['<Super>C']"
+gsettings set org.gnome.shell.keybindings toggle-application-view         "['<Super>Tab']"
+
 
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile           "flat"
-gsettings set org.gnome.shell favorite-apps                               "[]"
+gsettings set org.gnome.shell favorite-apps                               "[]"f
 
 
 echo "Updating & Upgrading Arch..."
@@ -62,14 +55,17 @@ pacman_packages=(
 	nmap
 	wget
 	base-devel
-	cmake
+	cmake 
 	obs-studio
 	flatpak
 	net-tools
+  nvidia
+  nvidia-utils
+  mesa
 )
 
 i=0
-total=${#pacman_packages[@]}
+total=${#pacman_packages[@]} 
 
 while [ $i -lt $total ]; do
   pkg=${pacman_packages[$i]}
