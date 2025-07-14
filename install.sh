@@ -30,13 +30,21 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left     "['<Al
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right    "['<Alt><Shift>L']"
 gsettings set org.gnome.desktop.wm.keybindings show-desktop               "['<Super>D']"
 gsettings set org.gnome.desktop.wm.keybindings toggle-maximized           "['<Super>Up']"
-gsettings set org.gnome.desktop.wm.keybindings close                      "['<Super>C']"
-gsettings set org.gnome.shell.keybindings toggle-application-view         "['<Super>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings close                      "['<Alt>F4', '<Super>c']"
+gsettings set org.gnome.mutter overlay-key                                "['<Super>Tab']"
+
 
 
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile           "flat"
 gsettings set org.gnome.shell favorite-apps                               "[]"
 gsettings set org.gnome.mutter workspaces-only-on-primary                 false
+
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/ name 'Launch Terminal'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/ command 'kgx'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/ binding '<Alt>t'
+# Setting kgx to launch with alt+t
 
 
 
