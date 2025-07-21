@@ -46,6 +46,12 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/ binding '<Alt>t'
 # Setting kgx to launch with alt+t
 
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-firefox/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-firefox/ name 'Launch Firefox'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-firefox/ command 'firefox'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-firefox/ binding '<Alt>f'
+# Setting firefox to launch with alt+f
+
 
 
 echo "Updating & Upgrading Arch..."
@@ -69,9 +75,9 @@ pacman_packages=(
 	obs-studio
 	flatpak
 	net-tools
-  nvidia
-  nvidia-utils
-  mesa
+	nvidia
+	nvidia-utils
+	mesa
 )
 
 i=0
@@ -104,6 +110,8 @@ echo ""
 
 yay_packages=(
 	"elecwhat-bin"
+	"brave-bin"
+	"visual-studio-code-bin"
 )
 
 
@@ -125,12 +133,10 @@ echo ""
 echo "Installing flatpacks..."
 flatpacks=(
   "md.obsidian.Obsidian"
-  "com.brave.Browser"
   "com.discordapp.Discord"
   "com.spotify.Client"
   "com.obsproject.Studio"
   "org.kde.kate"
-  "com.visualstudio.code"
   "org.videolan.VLC"
   "com.rafaelmardojai.Blanket"
 )

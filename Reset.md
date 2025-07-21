@@ -21,12 +21,15 @@
 	```
 
 ### Slow Shutdown Time Solve
-1. 
-	- `sudo nvim /etc/systemd/system.conf`
-	- un-comment the line `DefaultTimeoutStopSec=90s`
-	- Then make the default timeout `10s`
-2. 
-	- `sudo nvim /usr/lib/systemd/user/gnome-session-restart-dbus.service` 
-	- Add `Slice=.slice` to the bottom of the file under `[Service]`
+- `sudo nvim /etc/systemd/system.conf`
+- un-comment the line `DefaultTimeoutStopSec=90s`
+- Then make the default timeout `10s`
+- After 2 restarts it should work normally
 
-###
+### Change Default D.N.S.
+```bash
+nmcli connection modify "$(nmcli -g NAME connection show --active | head -n1)" ipv4.dns "8.8.8.8 1.1.1.1" ipv4.ignore-auto-dns yes
+nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
+```
+- Copy the whole above thing and simply paste in terminal 
+- This will make the D.N.S. `1.1.1.1, 8.8.8.8` for the currently active connection
