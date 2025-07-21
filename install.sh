@@ -40,17 +40,21 @@ gsettings set org.gnome.shell favorite-apps                               "[]"
 gsettings set org.gnome.mutter workspaces-only-on-primary                 false
 
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/']"
+# Create custom binding: Launch Terminal with Alt+T
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/ name 'Launch Terminal'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/ command 'kgx'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/ binding '<Alt>t'
-# Setting kgx to launch with alt+t
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-firefox/']"
+# Create custom binding: Launch Firefox with Alt+F
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-firefox/ name 'Launch Firefox'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-firefox/ command 'firefox'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-firefox/ binding '<Alt>f'
-# Setting firefox to launch with alt+f
+
+# Register both bindings
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
+"['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-terminal/', \
+  '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/launch-firefox/']"
+
 
 
 
@@ -78,6 +82,7 @@ pacman_packages=(
 	nvidia
 	nvidia-utils
 	mesa
+  deluge-gtk
 )
 
 i=0
