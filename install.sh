@@ -81,8 +81,9 @@ pacman_packages=(
 	net-tools
 	nvidia
 	nvidia-utils
+ 	nvidia-prime
 	mesa
-  deluge-gtk
+  	deluge-gtk
 )
 
 i=0
